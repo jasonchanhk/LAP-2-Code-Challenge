@@ -16,7 +16,7 @@ pool.query(`
     name VARCHAR(200),
     body VARCHAR(500)
     );
-    INSERT INTO post (title, name, body) 
+    INSERT INTO posts (title, name, body) 
     VALUES 
     ('Yesterday is hot', 'Jason', '39C is really hot, my house is like an oven.'),
     ('Today is Wednesday', 'Nouria', 'The weather is chill!'),
