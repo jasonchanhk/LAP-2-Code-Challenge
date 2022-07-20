@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,28 @@
     <link rel="stylesheet" href="static/css/index.css">
     <title>My little project</title>
 </head>
+
 <body>
-    <h1>My little project</h1>
-    <div>This is Wednesday, the weather is nice today</div>
+    
+    <main>
+        <form>
+            <label class="custom-field">
+                <input type="text" name="title" placeholder="&nbsp;" />
+                <span class="placeholder">Title</span>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="name" placeholder="&nbsp;" />
+                <span class="placeholder">Name</span>
+            </label>
+            <label class="custom-field">
+                <textarea name="body" placeholder="&nbsp;"></textarea>
+                <span class="placeholder">Body</span>
+            </label>
+            <input type="submit" class="submit" value="Publish">
+        </form>
+    </main>
     <script src='static/js/index.js'></script>
+    <script src='static/js/request.js'></script>
 </body>
+
 </html>
