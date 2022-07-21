@@ -6,6 +6,7 @@ class Post {
     this.title = data.title;
     this.name = data.name;
     this.body = data.body;
+    this.time = data.time;
   }
 
   static get all() {
@@ -38,9 +39,12 @@ class Post {
   static create(title, name, body) {
     return new Promise(async (resolve, reject) => {
       try {
+        const time = new Date().toLocaleString("en-GB", {
+          timeZone: "Europe/London",
+        });
         let postData = await db.query(
-          `INSERT INTO posts (title, name, body) VALUES ($1, $2, $3) RETURNING *;`,
-          [title, name, body]
+          `INSERT INTO posts (title, name, body, time) VALUES ($1, $2, $3, $4) RETURNING *;`,
+          [title, name, body, time]
         );
         let newPost = new Post(postData.rows[0]);
         resolve(newPost);
