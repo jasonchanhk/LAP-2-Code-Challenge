@@ -36,10 +36,10 @@ class Post {
     });
   }
 
-  static create(title, name, body, time) {
+  static create(title, name, body) {
     return new Promise(async (resolve, reject) => {
       try {
-        time = new Date().toLocaleString("en-GB", {
+        const time = new Date().toLocaleString("en-GB", {
           timeZone: "Europe/London",
         });
         let postData = await db.query(
