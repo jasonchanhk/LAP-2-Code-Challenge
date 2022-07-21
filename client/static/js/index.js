@@ -4,8 +4,8 @@ const form = document.querySelector('form')
 
 const fields = [
     { tag: 'input', attributes: { type: 'text', name: 'title', placeholder: ` ` }, text: 'Title' },
-    { tag: 'input', attributes: { type: 'text', name: 'name', placeholder: ` ` }, text: 'Name' },
-    { tag: 'textarea', attributes: { name: 'body', placeholder: ` ` }, text: 'Body' }
+    { tag: 'input', attributes: { type: 'text', name: 'name', placeholder: ` ` }, text: 'Pseudonym' },
+    { tag: 'textarea', attributes: { name: 'body', placeholder: ` ` }, text: 'Your story...' }
 ]
 
 window.addEventListener('hashchange', updateContent);
@@ -59,15 +59,32 @@ function renderNewBookForm() {
 
 async function loadPostFor(id) {
     const data = await getPost(id);
-
+    console.log(data)
     const div = document.createElement('div')
-    Object.entries(data).slice(1).forEach(([a, v]) => {
-        const info = document.createElement('p');
-        info.setAttribute('class', a)
-        info.textContent = v
+    
+    const title = document.createElement('p');
+    title.setAttribute('class', 'title')
+    title.textContent = data.title
 
-        div.appendChild(info)
-    })
+    const time = document.createElement('span');
+    time.setAttribute('class', 'post-time')
+    time.textContent = `@ ${data.time?.split(',')[0]}` || 'Not found'
+
+    const name = document.createElement('p');
+    name.setAttribute('class', 'name')
+    name.textContent = data.name
+
+    name.appendChild(time)
+
+    const body = document.createElement('p');
+    body.setAttribute('class', 'body')
+    body.textContent = data.body
+
+    div.appendChild(title)
+    div.appendChild(name)
+    div.appendChild(body)
+
+
     const exit = document.createElement('a')
     exit.textContent = 'X'
     exit.setAttribute('class', 'exit')
@@ -75,16 +92,5 @@ async function loadPostFor(id) {
 
     div.appendChild(exit);
     main.appendChild(div);
-    // modalHeader.textContent = `${book.title} - ${book.yearOfPublication}`;
-    // const authorLink = createItemLink(book.author);
-    // const abstract = document.createElement('p');
-    // abstract.textContent = book.abstract;
-    // const deleteBtn = document.createElement('button');
-    // deleteBtn.textContent = 'Delete Book';
-    // deleteBtn.onclick = () => deleteBook(book.id);
-    // modalContent.appendChild(authorLink);
-    // modalContent.appendChild(abstract);
-    // modalContent.appendChild(deleteBtn);
-    // modalExit.href = `#books`;
 }
 

@@ -1,7 +1,12 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1548350896-fafc317d3ceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+}
+
 main {
     max-width: 500px;
+    padding-top: 40px;
     margin: auto;
-    background: white;
     font-family: sans-serif;
 }
 
@@ -23,6 +28,10 @@ form {
     --field-padding: 12px;
 }
 
+.custom-field:first-child {
+    font-size: 24px;
+}
+
 .custom-field input {
     border: 1px solid #f2f2f2;
     -webkit-appearance: none;
@@ -34,6 +43,10 @@ form {
     width: 500px;
     outline: none;
     font-size: 14px;
+}
+
+.custom-field:first-child input{
+    font-size: 24px;
 }
 
 .custom-field textarea {
@@ -66,6 +79,10 @@ form {
         left 0.3s ease
 }
 
+.custom-field:first-child .placeholder {
+    top: 28px;
+}
+
 .custom-field input.dirty+.placeholder,
 .custom-field input:focus+.placeholder,
 .custom-field input:not(:placeholder-shown)+.placeholder {
@@ -79,7 +96,7 @@ form {
 }
 
 .submit {
-    border: 1px solid black;
+    border: none;
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
@@ -95,10 +112,21 @@ form {
 
 p{
     border: 1px solid #f2f2f2;
+    background-color: white;
+    border-radius: 3px;
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 5px;
     padding: 12px;
+}
+
+p:first-child{
+    font-size: 24px;
+}
+
+.post-time{
+    color:#aaa;
+    padding-left: 10px;
 }
 
 .body {
@@ -106,7 +134,6 @@ p{
 }
 
 .exit{
-    border: 1px solid black;
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
@@ -121,5 +148,5 @@ p{
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color:
+    color: black
 }
