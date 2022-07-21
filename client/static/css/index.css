@@ -1,0 +1,125 @@
+main {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    font-family: sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.custom-field {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 5px;
+    --field-padding: 12px;
+}
+
+.custom-field input {
+    border: 1px solid #f2f2f2;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: var(--field-padding);
+    border-radius: 3px;
+    width: 500px;
+    outline: none;
+    font-size: 14px;
+}
+
+.custom-field textarea {
+    border: 1px solid #f2f2f2;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: var(--field-padding);
+    border-radius: 3px;
+    width: 500px;
+    height: 500px;
+    outline: none;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: var(--field-padding);
+    width: calc(50% - (var(--field-padding) * 2 ));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 22px;
+    line-height: 100%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition:
+        left 0.3s ease
+}
+
+.custom-field input.dirty+.placeholder,
+.custom-field input:focus+.placeholder,
+.custom-field input:not(:placeholder-shown)+.placeholder {
+    left: -90px;
+}
+
+.custom-field textarea.dirty+.placeholder,
+.custom-field textarea:focus+.placeholder,
+.custom-field textarea:not(:placeholder-shown)+.placeholder {
+    left: -90px;
+}
+
+.submit {
+    border: 1px solid black;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 12px;
+    border-radius: 3px;
+    width: 500px;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+p{
+    border: 1px solid #f2f2f2;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding: 12px;
+}
+
+.body {
+    height: 500px;
+}
+
+.exit{
+    border: 1px solid black;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 12px;
+    border-radius: 3px;
+    width: 50px;
+    float: right;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color:
+}
