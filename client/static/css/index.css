@@ -76,7 +76,8 @@ form {
     transform: translateY(-50%);
     color: #aaa;
     transition:
-        left 0.3s ease
+        left 0.3s ease,
+        color 0.3s ease
 }
 
 .custom-field:first-child .placeholder {
@@ -87,12 +88,14 @@ form {
 .custom-field input:focus+.placeholder,
 .custom-field input:not(:placeholder-shown)+.placeholder {
     left: -90px;
+    color: white
 }
 
 .custom-field textarea.dirty+.placeholder,
 .custom-field textarea:focus+.placeholder,
 .custom-field textarea:not(:placeholder-shown)+.placeholder {
     left: -90px;
+    color: white
 }
 
 .submit {
